@@ -9,7 +9,7 @@ channels:
 dependencies:
   - gh
   - git
-  - ipykernel=6.15.0=pyh025b116_0
+  - ipykernel
   - ipython=8.14.0=pyh08f2357_0
   - jedi=0.18.2=pyhd8ed1ab_0
   - jupyter_client=8.2.0=pyhd8ed1ab_0
