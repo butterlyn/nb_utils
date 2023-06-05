@@ -10,9 +10,7 @@ dependencies:
   - gh
   - git
   - ipykernel
-  - ipython
-  - jupyter_client
-  - jupyter_core
+  - jupyter
   - matplotlib-inline
   - numpy
   - pa
