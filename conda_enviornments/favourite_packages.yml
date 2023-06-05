@@ -24,35 +24,6 @@ dependencies:
       - gitpython==3.1.31
       - smmap==5.0.0
 
-Skip to content
-Product
-Solutions
-Open Source
-Pricing
-Search
-Sign in
-Sign up
-conda
-/
-constructor
-Public
-Code
-Issues
-36
-Pull requests
-6
-Actions
-Security
-Insights
-constructor/conda.recipe/meta.yaml
-@jaimergp
-jaimergp fix conda 23.1+ incompatibility (#659)
-…
-Latest commit ed9b9cf on Apr 22
- History
- 6 contributors
-@jaimergp@mcg1969@msarahan@jezdez@angloyna@dbast
- 79 lines (72 sloc)  2.04 KB
  
 
 {% set data = load_setup_py_data() %}
