@@ -7,72 +7,101 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - asttokens=2.2.1=pyhd8ed1ab_0
-  - backcall=0.2.0=pyh9f0ad1d_0
-  - backports=1.0=pyhd8ed1ab_3
-  - backports.functools_lru_cache=1.6.4=pyhd8ed1ab_0
-  - bzip2=1.0.8=he774522_0
-  - ca-certificates=2023.5.7=h56e8100_0
-  - cffi=1.15.1=py311h2bbff1b_3
-  - clr_loader=0.2.5=pyhd8ed1ab_0
-  - colorama=0.4.6=pyhd8ed1ab_0
-  - debugpy=1.5.1=py311hd77b12b_0
-  - decorator=5.1.1=pyhd8ed1ab_0
-  - executing=1.2.0=pyhd8ed1ab_0
-  - gh=2.25.1=hd02998f_0
-  - git=2.34.1=haa95532_0
-  - importlib-metadata=6.6.0=pyha770c72_0
-  - importlib_metadata=6.6.0=hd8ed1ab_0
-  - ipykernel=6.15.0=pyh025b116_0
-  - ipython=8.14.0=pyh08f2357_0
-  - jedi=0.18.2=pyhd8ed1ab_0
-  - jupyter_client=8.2.0=pyhd8ed1ab_0
-  - jupyter_core=5.3.0=py311h1ea47a8_0
-  - libffi=3.4.4=hd77b12b_0
-  - libsodium=1.0.18=h8d14728_1
-  - matplotlib-inline=0.1.6=pyhd8ed1ab_0
-  - mypy=0.981=py311haa95532_0
-  - mypy_extensions=1.0.0=pyha770c72_0
-  - nest-asyncio=1.5.6=pyhd8ed1ab_0
-  - openssl=1.1.1t=h2bbff1b_0
-  - packaging=23.1=pyhd8ed1ab_0
-  - parso=0.8.3=pyhd8ed1ab_0
-  - pickleshare=0.7.5=py_1003
-  - pip=23.1.2=pyhd8ed1ab_0
-  - platformdirs=3.5.1=pyhd8ed1ab_0
-  - prompt-toolkit=3.0.38=pyha770c72_0
-  - prompt_toolkit=3.0.38=hd8ed1ab_0
-  - psutil=5.9.0=py311h2bbff1b_0
-  - pure_eval=0.2.2=pyhd8ed1ab_0
-  - pycparser=2.21=pyhd8ed1ab_0
-  - pygments=2.15.1=pyhd8ed1ab_0
+  - python=${ python_version }
+
+  - gh
+  - git
+
+  - ipykernel
+  - jupyter
+  - matplotlib-inline
+  - numpy
+  - mypy
   - python=3.11.3=h966fe2a_0
-  - python-dateutil=2.8.2=pyhd8ed1ab_0
-  - python_abi=3.11=2_cp311
-  - pythonnet=3.0.1=pyhd8ed1ab_0
-  - pywin32=305=py311h2bbff1b_0
-  - pyzmq=25.0.2=py311hd77b12b_0
-  - setuptools=66.0.0=py311haa95532_0
-  - six=1.16.0=pyh6c4a22f_0
-  - sqlite=3.41.2=h2bbff1b_0
-  - stack_data=0.6.2=pyhd8ed1ab_0
-  - tk=8.6.12=h2bbff1b_0
-  - toml=0.10.2=pyhd8ed1ab_0
-  - tornado=6.2=py311h2bbff1b_0
-  - traitlets=5.9.0=pyhd8ed1ab_0
-  - typing-extensions=4.6.3=hd8ed1ab_0
-  - typing_extensions=4.6.3=pyha770c72_0
-  - tzdata=2023c=h04d1e81_0
-  - vc=14.2=h21ff451_1
-  - vs2015_runtime=14.27.29016=h5e58377_2
-  - wcwidth=0.2.6=pyhd8ed1ab_0
-  - wheel=0.38.4=py311haa95532_0
-  - xz=5.4.2=h8cc25b3_0
-  - zeromq=4.3.4=h0e60522_1
-  - zipp=3.15.0=pyhd8ed1ab_0
-  - zlib=1.2.13=h8cc25b3_0
+
   - pip:
       - gitdb==4.0.10
       - gitpython==3.1.31
       - smmap==5.0.0
-prefix: C:\Users\NButterly\AppData\Local\miniconda3\envs\NB_base_311
+
+ 
+
+{% set data = load_setup_py_data() %}
+
+package:
+  name: constructor
+  version: {{ data.get('version') }}
+
+source:
+  # git_url is nice in that it won't capture devenv stuff.  However, it only
+  # captures committed code, so pay attention.
+  - git_url: ../
+
+build:
+  script:
+    - python -m pip install --no-deps --ignore-installed .
+  entry_points:
+    - constructor = constructor.main:main
+  script_env:
+    - CODECOV_FOLDER
+    - RUN_EXAMPLES
+
+requirements:
+  host:
+    - python
+    - pip
+    # FIXME: Workaround for xz 5.2.10 issue on py310
+    - xz !=5.2.10       # [win and py == 310]
+  run:
+    - conda >=4.6
+    - python
+    - ruamel.yaml >=0.11.14,<0.18
+    - conda-standalone <23.1.0  # https://github.com/conda/constructor/issues/628
+    - pillow >=3.1     # [win or osx]
+    - nsis >=3.08      # [win]
+  run_constrained:     # [unix]
+    - nsis >=3.08      # [unix]
+
+test:
+  source_files:
+    - tests
+    - scripts
+    - examples
+    - .coveragerc
+  requires:
+    - pip
+    - pillow >=3.1
+    - pytest
+    - pytest-cov
+  commands:
+    - pip check
+    - pytest -v --cov-branch --cov=constructor tests
+    - coverage run --branch --append -m constructor -V
+    - coverage json
+    - if [%CODECOV_FOLDER%] neq [] copy coverage.json "%CODECOV_FOLDER%" # [win]
+    - if [ -n "$CODECOV_FOLDER" ]; then cp coverage.json "$CODECOV_FOLDER"; fi # [unix]
+    - coverage report
+    - if [%RUN_EXAMPLES%] neq [] python scripts/run_examples.py      # [win]
+    - if [ -n "$RUN_EXAMPLES" ]; then python scripts/run_examples.py; fi  # [unix]
+
+about:
+  home: https://conda.io
+  license: BSD 3-Clause
+  license_file: LICENSE.txt
+  summary: create installer from conda packages
+  description: |
+    Constructor is a tool for constructing an installer for a collection of
+    conda packages. It creates an Anaconda-like installer consisting of
+    packages.
+  doc_url: https://conda.io/projects/conda/en/latest/
+  dev_url: https://github.com/conda/constructor
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - mbargull
+    - kalefranz
+    - msarahan
+    - mingwandroid
+    - nehaljwani
+    - mcg1969
