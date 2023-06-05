@@ -7,7 +7,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - gh=2.25.1=hd02998f_0
+  - gh
   - git=2.34.1=haa95532_0
   - importlib-metadata=6.6.0=pyha770c72_0
   - importlib_metadata=6.6.0=hd8ed1ab_0
