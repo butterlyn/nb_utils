@@ -1,0 +1,2 @@
+# This .yml file is made to organise python packages I discover, many of which I would have not even tried.
+# The idea is that I can create a yml file by deleting packages that aren't required, and then use the yml file to install the packages in a new environment.
