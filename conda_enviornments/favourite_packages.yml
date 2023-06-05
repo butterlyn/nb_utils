@@ -14,7 +14,7 @@ dependencies:
   - jupyter_client
   - jupyter_core
   - matplotlib-inline
-  - matplotlib-inline
+  - 
   - mypy=0.981=py311haa95532_0
   - mypy_extensions=1.0.0=pyha770c72_0
   - nest-asyncio=1.5.6=pyhd8ed1ab_0
