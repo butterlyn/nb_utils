@@ -16,7 +16,7 @@ dependencies:
   - matplotlib-inline
   - numpy
   - pandas
-  - 
+  - pip
   - nest-asyncio=1.5.6=pyhd8ed1ab_0
   - openssl=1.1.1t=h2bbff1b_0
   - packaging=23.1=pyhd8ed1ab_0
