@@ -9,7 +9,7 @@ channels:
 dependencies:
   - gh
   - git
-  
+
   - ipykernel
   - jupyter
   - matplotlib-inline
