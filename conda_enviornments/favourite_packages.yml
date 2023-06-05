@@ -9,8 +9,7 @@ channels:
 dependencies:
   - gh
   - git
-  - importlib-metadata=6.6.0=pyha770c72_0
-  - importlib_metadata=6.6.0=hd8ed1ab_0
+
   - ipykernel=6.15.0=pyh025b116_0
   - ipython=8.14.0=pyh08f2357_0
   - jedi=0.18.2=pyhd8ed1ab_0
