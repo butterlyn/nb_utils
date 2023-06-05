@@ -7,7 +7,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python {{1}}
+  - python {{}}
 
   - gh
   - git
