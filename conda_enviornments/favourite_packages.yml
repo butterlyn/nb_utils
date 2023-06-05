@@ -61,3 +61,5 @@ dependencies:
       - gitpython==3.1.31
       - smmap==5.0.0
 prefix: C:\Users\NButterly\AppData\Local\miniconda3\envs\NB_base_311
+
+
