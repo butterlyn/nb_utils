@@ -1,0 +1,82 @@
+{# Taken from https://github.com/conda/constructor/blob/main/conda.recipe/meta.yaml #}
+{# Can be used in liu of dockerfile for setting up environment of user #}
+
+{% set data = load_setup_py_data() %}
+
+package:
+  name: constructor
+  version: {{ data.get('version') }}
+
+source:
+  # git_url is nice in that it won't capture devenv stuff.  However, it only
+  # captures committed code, so pay attention.
+  - git_url: ../
+
+build:
+  script:
+    - python -m pip install --no-deps --ignore-installed .
+  entry_points:
+    - constructor = constructor.main:main
+  script_env:
+    - CODECOV_FOLDER
+    - RUN_EXAMPLES
+
+requirements:
+  host:
+    - python
+    - pip
+    # FIXME: Workaround for xz 5.2.10 issue on py310
+    - xz !=5.2.10       # [win and py == 310]
+  run:
+    - conda >=4.6
+    - python
+    - ruamel.yaml >=0.11.14,<0.18
+    - conda-standalone <23.1.0  # https://github.com/conda/constructor/issues/628
+    - pillow >=3.1     # [win or osx]
+    - nsis >=3.08      # [win]
+  run_constrained:     # [unix]
+    - nsis >=3.08      # [unix]
+
+test:
+  source_files:
+    - tests
+    - scripts
+    - examples
+    - .coveragerc
+  requires:
+    - pip
+    - pillow >=3.1
+    - pytest
+    - pytest-cov
+  commands:
+    - pip check
+    - pytest -v --cov-branch --cov=constructor tests
+    - coverage run --branch --append -m constructor -V
+    - coverage json
+    - if [%CODECOV_FOLDER%] neq [] copy coverage.json "%CODECOV_FOLDER%" # [win]
+    - if [ -n "$CODECOV_FOLDER" ]; then cp coverage.json "$CODECOV_FOLDER"; fi # [unix]
+    - coverage report
+    - if [%RUN_EXAMPLES%] neq [] python scripts/run_examples.py      # [win]
+    - if [ -n "$RUN_EXAMPLES" ]; then python scripts/run_examples.py; fi  # [unix]
+
+about:
+  home: https://conda.io
+  license: BSD 3-Clause
+  license_file: LICENSE.txt
+  summary: create installer from conda packages
+  description: |
+    Constructor is a tool for constructing an installer for a collection of
+    conda packages. It creates an Anaconda-like installer consisting of
+    packages.
+  doc_url: https://conda.io/projects/conda/en/latest/
+  dev_url: https://github.com/conda/constructor
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - mbargull
+    - kalefranz
+    - msarahan
+    - mingwandroid
+    - nehaljwani
+    - mcg1969
