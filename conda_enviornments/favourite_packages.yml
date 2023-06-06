@@ -75,4 +75,6 @@ dependencies:
       - gitdb==4.0.10
       - gitpython==3.1.31
       - smmap==5.0.0
+#      - git+https://github.com/{{ github_user }}/{{ repo }}.git@{{ branch }}#egg={{ pip_installation_name_if_different_to_git_repo_name }}
+#      - -r https://raw.githubusercontent.com/{{ github_user }}/{{ repo }}/{{ branch }}/requirements.txt
 prefix: C:\Users\NButterly\AppData\Local\miniconda3\envs\NB_base_311
