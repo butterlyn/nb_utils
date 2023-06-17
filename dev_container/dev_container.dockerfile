@@ -2,8 +2,7 @@ FROM ubuntu: latest
 
 # BASIC SETUP ~~~~~~~~~~~~~~~~~
 WORKDIR /root
-RUN apt-get update
-RUN apt-get upgrade -y
+RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y curl
 RUN apt-get install -y git
 RUN apt-get install -y vim
