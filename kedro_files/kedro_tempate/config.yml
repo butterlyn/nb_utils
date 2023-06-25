@@ -1,0 +1,7 @@
+# configuration file for a kedro project
+# usage: kedro new --config=<path>/config.yml
+
+output_dir: .
+project_name: ${project_name_human_readable}
+repo_name: ${repo_name}
+python_package: ${python_package_name}

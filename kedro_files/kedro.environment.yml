@@ -1,0 +1,23 @@
+name: kedro_base
+channels:
+  - defaults
+  - conda-forge
+  - "file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel"
+dependencies:
+  - python=3.10.12
+  - pandas
+  - jupyter
+  - ipykernel
+  - cx_oracle #conda-forge
+  - sqlalchemy #conda-forge
+  - pyodbc
+  - pymssql
+  - aemo-pi #from file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel
+  - kedro #from conda-forge
+  - pip
+  - pip:
+      - kedro-viz
+      - kedro-static-viz
+      - kedro-datasets
+      - kedro-airflow
+      - kedro-docker
