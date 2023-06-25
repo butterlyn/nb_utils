@@ -1,0 +1,17 @@
+name: kedro_base
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10.12
+  - pandas
+  - jupyter
+  - ipykernel
+  - kedro
+  - pip
+  - pip:
+      - kedro-viz
+      - kedro-static-viz
+      - kedro-datasets
+      - kedro-airflow
+      - kedro-docker
