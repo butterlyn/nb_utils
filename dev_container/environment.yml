@@ -18,7 +18,6 @@ dependencies:
   - ipykernel
   - numpy
   - pandas
-  - pyya
   
 ### Plotting
   - matplotlib
