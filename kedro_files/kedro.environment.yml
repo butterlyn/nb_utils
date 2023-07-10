@@ -11,13 +11,13 @@ dependencies:
   - cx_oracle
   - aemo-pi #from file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel
   - kedro
-  - find-kedro
-  - kedro-mlflow
-  - kedro-datasets
-#  - kedro-airflow
-#  - kedro-neptune
+  #  - kedro-airflow
+  #  - kedro-neptune
   - pip
   - pip:
+    - find-kedro
+    - kedro-mlflow
+    - kedro-datasets
     - kedro-viz
     - git+https://norvbgit1.aemo.local/PSMP/WA_db.git@master#egg=WA_db
 #    - kedro-docker
