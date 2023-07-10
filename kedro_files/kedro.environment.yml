@@ -21,4 +21,3 @@ dependencies:
       - kedro-datasets
       - kedro-airflow
       - kedro-docker
-      - kedro-neptune
