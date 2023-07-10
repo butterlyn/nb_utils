@@ -12,7 +12,7 @@ dependencies:
   - aemo-pi #from file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel
   - kedro
   - kedro-mlflow
-  - kedro-neptune
+#  - kedro-neptune
   - kedro-datasets
 #  - kedro-airflow
   - pip
