@@ -14,7 +14,7 @@ dependencies:
   - kedro-mlflow
   - kedro-neptune
   - kedro-datasets
-  - kedro-airflow
+#  - kedro-airflow
   - pip
   - pip:
     - kedro-viz
