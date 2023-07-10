@@ -9,7 +9,6 @@ dependencies:
   - jupyter
   - ipykernel
   - cx_oracle
-  - pymssql
   - aemo-pi #from file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel
   - kedro
   - kedro-mlflow
