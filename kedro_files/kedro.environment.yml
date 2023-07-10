@@ -24,5 +24,4 @@ dependencies:
       - kedro-airflow
       - kedro-docker
       - kedro-neptune
-        - kedro-mlflow
-
+        - kedro-mlflo
