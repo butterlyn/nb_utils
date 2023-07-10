@@ -17,7 +17,6 @@ dependencies:
   - pip
   - pip:
       - kedro-viz
-      #- kedro-static-viz
       - kedro-datasets
       - kedro-airflow
       - kedro-docker
