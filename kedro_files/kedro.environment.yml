@@ -16,6 +16,7 @@ dependencies:
   - kedro #from conda-forge
   - kedro-mlflow
   - kedro-neptune
+      - kedro-datasets
   - pip
   - pip:
       - kedro-viz
