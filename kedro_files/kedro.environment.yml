@@ -8,7 +8,7 @@ dependencies:
   - pandas
   - jupyter
   - ipykernel
-  - cx_oracle #conda-forge
+  - cx_oracle
   - sqlalchemy #conda-forge
   - pyodbc
   - pymssql
