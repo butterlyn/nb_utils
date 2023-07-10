@@ -4,7 +4,7 @@ channels:
   - conda-forge
   - "file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel"
 dependencies:
-  #  - python=3.10.12
+#  - python=3.10.12
   - python=3.9.17
   - pandas
   - jupyter
@@ -16,10 +16,10 @@ dependencies:
   #  - kedro-neptune
   - pip
   - pip:
-      - find-kedro
-      - kedro-mlflow
-      - kedro-datasets
-      - kedro-viz
-      - git+https://norvbgit1.aemo.local/PSMP/WA_db.git@master#egg=WA_db
+    - find-kedro
+    - kedro-mlflow
+    - kedro-datasets
+    - kedro-viz
+    - git+https://norvbgit1.aemo.local/PSMP/WA_db.git@master#egg=WA_db
 #    - kedro-docker
 #    - kedro-accelerator
