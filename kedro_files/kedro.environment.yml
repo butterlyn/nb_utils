@@ -14,6 +14,7 @@ dependencies:
   - pymssql
   - aemo-pi #from file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel
   - kedro #from conda-forge
+  
   - pip
   - pip:
       - kedro-viz
@@ -21,4 +22,3 @@ dependencies:
       - kedro-airflow
       - kedro-docker
       - kedro-neptune
-      
