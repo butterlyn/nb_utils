@@ -20,5 +20,5 @@ dependencies:
   - pip
   - pip:
       - kedro-viz
-  - kedro-docker
+    - kedro-docker
       - kedro-airflow
