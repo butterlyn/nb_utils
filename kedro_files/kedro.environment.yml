@@ -17,7 +17,6 @@ dependencies:
   - kedro-mlflow
   - kedro-neptune
   - kedro-datasets
-  - kedro-docker
   - pip
   - pip:
       - kedro-viz
