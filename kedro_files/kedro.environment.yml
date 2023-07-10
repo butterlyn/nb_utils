@@ -19,6 +19,6 @@ dependencies:
   - pip
   - pip:
     - kedro-viz
-    
+    -  git+https://norvbgit1.aemo.local/PSMP/WA_db.git@master#egg=WA_db
 #    - kedro-docker
 #    - kedro-accelerator
