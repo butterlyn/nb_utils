@@ -13,7 +13,7 @@ dependencies:
   - pyodbc
   - pymssql
   - aemo-pi #from file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel
-  - condakedro #from conda-forge
+  - channelkedro #from conda-forge
   - pip
   - pip:
       - kedro-viz
