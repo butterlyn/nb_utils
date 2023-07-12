@@ -1,4 +1,4 @@
-name: kedro_base
+name: kedro_base_39
 channels:
   - defaults
   - conda-forge
