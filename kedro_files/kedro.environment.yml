@@ -17,7 +17,7 @@ dependencies:
   - pip
   - pip:
     - find-kedro
-    - kedro-mlflow
+#    - kedro-mlflow
     - kedro-datasets
     - kedro-viz
     - git+https://norvbgit1.aemo.local/PSMP/WA_db.git@master#egg=wa-db
