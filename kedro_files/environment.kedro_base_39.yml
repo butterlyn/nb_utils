@@ -14,7 +14,7 @@ dependencies:
   - kedro
   #  - kedro-airflow
   #  - kedro-neptune
-  - openxlsx
+  - openxl
   - pip
   - pip:
       - find-kedro
