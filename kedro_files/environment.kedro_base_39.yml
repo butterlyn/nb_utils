@@ -10,6 +10,8 @@ dependencies:
   - jupyter
   - ipykernel
   - cx_oracle
+  #  - kedro-neptune
+  #  - kedro-airflow
   - openpyxl
   - conda-forge::kedro
   - conda-forge/label/cython-dev::cython
