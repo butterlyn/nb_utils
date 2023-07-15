@@ -21,6 +21,6 @@ dependencies:
       - kedro-datasets
       - kedro-viz
       - git+https://norvbgit1.aemo.local/PSMP/WA_db.git@master#egg=wa-db
-     - kedro-docker
-     - kedro-accelerator
-#     - find-kedro
+      - kedro-docker
+      - kedro-accelerator
+     - find-kedro
