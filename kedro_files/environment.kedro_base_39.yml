@@ -4,7 +4,7 @@ channels:
   - conda-forge
   - "file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel"
 dependencies:
-  #  - python=3.10.12
+  - python=3.10.12
   - python=3.9.17
   - pandas
   - jupyter
