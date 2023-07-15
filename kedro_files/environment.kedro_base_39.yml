@@ -11,7 +11,7 @@ dependencies:
   - ipykernel
   - cx_oracle
   - openpyxl
-  - 
+  - conda
   - conda-forge::kedro
   #  - kedro-neptune
   #  - kedro-airflow
