@@ -17,7 +17,6 @@ dependencies:
   - file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel::aemo-pi #from file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel
   - pip
   - pip:
-      #    - kedro-mlflow
       - kedro-datasets
       - kedro-viz
       - git+https://norvbgit1.aemo.local/PSMP/WA_db.git@master#egg=wa-db
