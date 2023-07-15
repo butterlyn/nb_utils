@@ -14,7 +14,6 @@ dependencies:
   - conda-forge::kedro
   #  - kedro-airflow
   #  - kedro-neptune
-  - openpyxl
   - pip
   - pip:
       - find-kedro
