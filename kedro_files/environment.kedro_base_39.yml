@@ -10,7 +10,7 @@ dependencies:
   - jupyter
   - ipykernel
   - cx_oracle
-  - file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channelaemo-pi #from file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel
+  - file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel::aemo-pi #from file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel
   - conda-forge::kedro
   #  - kedro-airflow
   #  - kedro-neptune
