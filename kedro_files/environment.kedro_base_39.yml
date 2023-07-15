@@ -12,6 +12,7 @@ dependencies:
   - cx_oracle
   - openpyxl
   - conda-forge::kedro
+  #  - kedro-neptune
   - file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel::aemo-pi #from file:////aemo.local/data/Departments/WA/WA System Management/Power Systems/Repository/conda_channel
   #  - kedro-airflow
   - pip
