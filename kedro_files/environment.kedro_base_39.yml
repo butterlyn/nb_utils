@@ -25,6 +25,7 @@ dependencies:
   - pip:
       - kedro-datasets
       - kedro-viz
+      - mypy
       - git+ssh://git@norvbgit1.aemo.local/PSMP/WA_db.git@master#egg=wa-db
       # - kedro-docker
       # - kedro-accelerator
