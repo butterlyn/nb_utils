@@ -21,7 +21,7 @@ dependencies:
   - conda-forge/label/cython_dev::cython
   - aemo-pi
   - aemo-oracle
-- scikit-learn
+  - scikit-learn
   - pip
   - pip:
       - kedro-datasets
