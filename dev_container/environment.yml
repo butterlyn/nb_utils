@@ -32,7 +32,7 @@ dependencies:
 
 ### CLI
 #  - python-fire
-#  - 
+#  - click
 
 ### Git
   - git
